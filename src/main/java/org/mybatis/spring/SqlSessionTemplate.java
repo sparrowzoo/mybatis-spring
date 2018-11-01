@@ -421,8 +421,10 @@ public class SqlSessionTemplate implements SqlSession, DisposableBean {
    * from Spring's Transaction Manager
    * It also unwraps exceptions thrown by {@code Method#invoke(Object, Object...)} to
    * pass a {@code PersistenceException} to the {@code PersistenceExceptionTranslator}.
+     *
    */
   private class SqlSessionInterceptor implements InvocationHandler {
+    //@harry jdk proxy
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
       SqlSession sqlSession = getSqlSession(

@@ -403,6 +403,7 @@ public class SqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, In
     state((configuration == null && configLocation == null) || !(configuration != null && configLocation != null),
               "Property 'configuration' and 'configLocation' can not specified with together");
 
+    //@harry build sql session factory
     this.sqlSessionFactory = buildSqlSessionFactory();
   }
 
@@ -419,7 +420,6 @@ public class SqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, In
   protected SqlSessionFactory buildSqlSessionFactory() throws IOException {
 
     Configuration configuration;
-
     XMLConfigBuilder xmlConfigBuilder = null;
     if (this.configuration != null) {
       configuration = this.configuration;

@@ -19,4 +19,6 @@ import org.mybatis.spring.sample.domain.User;
 
 public interface UserDao {
   User getUser(String userId);
+
+  void test(String userId);
 }
